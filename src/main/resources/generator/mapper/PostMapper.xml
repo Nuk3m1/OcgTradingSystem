@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nuk3m1.ocgtradingsystem.mapper.PostMapper">
+
+    <resultMap id="BaseResultMap" type="com.nuk3m1.ocgtradingsystem.model.entity.Post">
+            <id property="id" column="id" />
+            <result property="sellerId" column="seller_id" />
+            <result property="buyerId" column="buyer_id" />
+            <result property="message" column="message" />
+            <result property="creatTime" column="creat_time" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,seller_id,buyer_id,message,creat_time
+    </sql>
+</mapper>

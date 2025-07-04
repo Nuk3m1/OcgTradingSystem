@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nuk3m1.ocgtradingsystem.mapper.UserBannedMapper">
+
+    <resultMap id="BaseResultMap" type="com.nuk3m1.ocgtradingsystem.model.entity.UserBanned">
+            <result property="banUser" column="ban_user" />
+            <result property="status" column="status" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ban_user,status
+    </sql>
+</mapper>

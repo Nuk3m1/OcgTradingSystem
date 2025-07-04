@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nuk3m1.ocgtradingsystem.mapper.CardsMapper">
+
+    <resultMap id="BaseResultMap" type="com.nuk3m1.ocgtradingsystem.model.entity.Cards">
+            <id property="id" column="id" />
+            <result property="sellerId" column="seller_id" />
+            <result property="name" column="name" />
+            <result property="cardNumber" column="card_number" />
+            <result property="cardGraph" column="card_graph" />
+            <result property="rarity" column="rarity" />
+            <result property="price" column="price" />
+            <result property="attention" column="attention" />
+            <result property="status" column="status" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,seller_id,name,card_number,card_graph,rarity,
+        price,attention,status
+    </sql>
+</mapper>
