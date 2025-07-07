@@ -47,6 +47,6 @@ CREATE TABLE if not exists user_banned (
     ban_user BIGINT , -- 用户id
     status TINYINT DEFAULT 0 -- 状态(0待审核,1通过,2未通过)
 )AUTO_INCREMENT = 100;
-INSERT INTO users (account,password,type) VALUES ('Admin','123456','ADMIN')
+INSERT INTO users (account,password,type) VALUES ('Admin','Ee123456','ADMIN')
 
 

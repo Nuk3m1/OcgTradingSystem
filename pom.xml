@@ -114,7 +114,6 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.nuk3m1.ocgtradingsystem.OcgTradingSystemApplication</mainClass>
-                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>
