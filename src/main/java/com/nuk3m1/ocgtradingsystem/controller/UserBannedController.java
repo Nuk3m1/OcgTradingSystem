@@ -12,10 +12,7 @@ import com.nuk3m1.ocgtradingsystem.model.request.BannedSendRequest;
 import com.nuk3m1.ocgtradingsystem.service.UserBannedService;
 import com.nuk3m1.ocgtradingsystem.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -51,7 +48,7 @@ public class UserBannedController {
      * @return
      */
     @PostMapping("/pass")
-    public BaseResponse<Boolean> passRequest(BannedPassRequest passBannedRequest){
+    public BaseResponse<Boolean> passRequest(@RequestBody BannedPassRequest passBannedRequest){
         if(passBannedRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG,"target request is null");
         }
@@ -69,7 +66,7 @@ public class UserBannedController {
      * @return
      */
     @PostMapping("/fail")
-    public BaseResponse<Boolean> failRequest(BannedFailRequest failBannedRequest){
+    public BaseResponse<Boolean> failRequest(@RequestBody BannedFailRequest failBannedRequest){
         if(failBannedRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG,"target request is null");
         }
@@ -87,7 +84,7 @@ public class UserBannedController {
      * @return
      */
     @PostMapping("/send")
-    public BaseResponse<Long> sendRequest(BannedSendRequest bannedSendRequest){
+    public BaseResponse<Long> sendRequest(@RequestBody BannedSendRequest bannedSendRequest){
         if(bannedSendRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG);
         }

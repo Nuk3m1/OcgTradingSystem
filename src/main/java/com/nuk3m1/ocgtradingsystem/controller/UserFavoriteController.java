@@ -9,6 +9,7 @@ import com.nuk3m1.ocgtradingsystem.model.entity.Users;
 import com.nuk3m1.ocgtradingsystem.service.UserFavoriteService;
 import com.nuk3m1.ocgtradingsystem.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +26,7 @@ public class UserFavoriteController {
     @Resource
     private UserFavoriteService userFavoriteService;
 
-    @PostMapping("/get")
+    @GetMapping("/get")
     public BaseResponse<List<Cards>> getUserFavorite(){
 
         Users currentUser = usersService.getUser();

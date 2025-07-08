@@ -12,10 +12,7 @@ import com.nuk3m1.ocgtradingsystem.service.CardsService;
 import com.nuk3m1.ocgtradingsystem.service.PostService;
 import com.nuk3m1.ocgtradingsystem.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.xml.transform.Result;
@@ -35,7 +32,7 @@ public class PostController {
      * 发送留言
      */
     @PostMapping("/send")
-    public BaseResponse<Long> sendPost(PostSendRequest postSendRequest){
+    public BaseResponse<Long> sendPost(@RequestBody PostSendRequest postSendRequest){
         if(postSendRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG,"send post request is null");
         }

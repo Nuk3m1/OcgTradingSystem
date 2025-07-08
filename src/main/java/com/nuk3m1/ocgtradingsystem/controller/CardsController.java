@@ -34,7 +34,7 @@ public class CardsController {
      * 添加卡牌
      */
     @PostMapping("/add")
-    public BaseResponse<Long> addCards( CardsAddRequest cardsAddRequest){
+    public BaseResponse<Long> addCards(@RequestBody CardsAddRequest cardsAddRequest){
         if(cardsAddRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG,"add request is null");
         }
@@ -49,7 +49,7 @@ public class CardsController {
      * @return
      */
     @PostMapping("/delete")
-    public BaseResponse<Boolean> deleteCards( CardsDeleteRequest deleteRequest){
+    public BaseResponse<Boolean> deleteCards(@RequestBody CardsDeleteRequest deleteRequest){
         if(deleteRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG,"target card is null");
         }
@@ -93,7 +93,7 @@ public class CardsController {
      * 1.将对应的“上架”状态的卡牌 修改为 “2-已售出”
      */
     @PostMapping("/buy")
-    public BaseResponse<Boolean> buyCards(CardsBuyRequest cardsBuyRequest){
+    public BaseResponse<Boolean> buyCards(@RequestBody CardsBuyRequest cardsBuyRequest){
         if(cardsBuyRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG,"target request is wrong");
         }
@@ -108,7 +108,7 @@ public class CardsController {
      * @return
      */
     @PostMapping("/collect/add")
-    public BaseResponse<Boolean> collectCards(CardsCollectRequest cardsCollectRequest){
+    public BaseResponse<Boolean> collectCards(@RequestBody CardsCollectRequest cardsCollectRequest){
         Users user = usersService.getUser();
         if(cardsCollectRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG,"target request is null");
@@ -122,7 +122,7 @@ public class CardsController {
      * 1. 减去收藏表相应的信息
      */
     @PostMapping("/collect/delete")
-    public BaseResponse<Boolean> collectCancelCards(CardsCollectCancelRequest cardsCollectCancelRequest){
+    public BaseResponse<Boolean> collectCancelCards(@RequestBody CardsCollectCancelRequest cardsCollectCancelRequest){
         Users user = usersService.getUser();
         if(cardsCollectCancelRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG,"target request is null");

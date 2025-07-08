@@ -30,7 +30,7 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public BaseResponse<Long> UserRegister(UserRegisterRequest userRegisterRequest){
+    public BaseResponse<Long> UserRegister(@RequestBody UserRegisterRequest userRegisterRequest){
         if(userRegisterRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG);
         }
@@ -42,7 +42,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public BaseResponse<Users> userLogin(UserLoginRequest userLoginRequest){
+    public BaseResponse<Users> userLogin(@RequestBody UserLoginRequest userLoginRequest){
         if (userLoginRequest == null){
             throw new BusinessException(ErrorCode.PARAM_IS_WRONG);
         }
