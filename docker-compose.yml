@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # MySQL数据库服务
   mysql:
@@ -31,7 +29,7 @@ services:
       - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/OCGtradingSystem?useSSL=false&allowPublicKeyRetrieval=true
-      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_USERNAME: ocgtradingsystem
       SPRING_DATASOURCE_PASSWORD: Ee123456
     networks:
       - ocg-network

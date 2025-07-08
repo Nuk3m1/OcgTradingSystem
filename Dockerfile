@@ -20,10 +20,6 @@ WORKDIR /app
 # 从构建阶段复制构建好的jar文件
 COPY --from=build /app/target/ocgtradingsystem-0.0.1-SNAPSHOT.jar app.jar
 
-# 创建存放图片的目录
-RUN mkdir -p /app/photos
-COPY photos /app/photos
-
 # 暴露应用端口
 EXPOSE 8080
 
